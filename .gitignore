@@ -1,0 +1,50 @@
+# Dependencies managed by Composer
+/vendor/
+
+# Environment configuration file
+.env
+.env.*
+!.env.example
+
+# IDE and editor directories/files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+logs/
+
+# Build artifacts & temporary files
+build/
+tmp/
+
+# Code Coverage reports
+coverage/
+*.cov
+clover.xml
+junit.xml
+test-results/
+.phpunit.cache/
+
+# Node dependencies (if using Node for frontend assets during development)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# PHPUnit cache
+.phpunit.result.cache
+
+# Workbench directory (if using Orchestra Workbench for testing/development)
+workbench/
+
+# Herd specific (if any local config)
+.herd/ 

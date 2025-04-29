@@ -6,5 +6,5 @@ use Exception;
 
 class MultiversxException extends Exception
 {
-    // Vous pouvez ajouter un code ou méthodes spécifiques
+    // You can add specific code or methods here
 } 

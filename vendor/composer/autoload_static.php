@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc4a8ebf5c246ee03add640523210339f
+class ComposerStaticInit50ab414a16e5f1a02f9ec669002c3e91
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -51,6 +51,10 @@ class ComposerStaticInitc4a8ebf5c246ee03add640523210339f
         'v' => 
         array (
             'voku\\' => 5,
+        ),
+        'k' => 
+        array (
+            'kornrunner\\' => 11,
         ),
         'W' => 
         array (
@@ -128,7 +132,6 @@ class ComposerStaticInitc4a8ebf5c246ee03add640523210339f
         array (
             'Monolog\\' => 8,
             'Mockery\\' => 8,
-            'Mdanter\\Ecc\\' => 12,
         ),
         'L' => 
         array (
@@ -165,10 +168,10 @@ class ComposerStaticInitc4a8ebf5c246ee03add640523210339f
         array (
             'Fruitcake\\Cors\\' => 15,
             'Faker\\' => 6,
-            'FG\\' => 3,
         ),
         'E' => 
         array (
+            'Elliptic\\' => 9,
             'Egulias\\EmailValidator\\' => 23,
         ),
         'D' => 
@@ -190,6 +193,8 @@ class ComposerStaticInitc4a8ebf5c246ee03add640523210339f
         array (
             'Brick\\Math\\' => 11,
             'BitWasp\\Bech32\\' => 15,
+            'BN\\' => 3,
+            'BI\\' => 3,
         ),
     );
 
@@ -197,6 +202,10 @@ class ComposerStaticInitc4a8ebf5c246ee03add640523210339f
         'voku\\' => 
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
+        ),
+        'kornrunner\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kornrunner/keccak/src',
         ),
         'Whoops\\' => 
         array (
@@ -411,10 +420,6 @@ class ComposerStaticInitc4a8ebf5c246ee03add640523210339f
         array (
             0 => __DIR__ . '/..' . '/mockery/mockery/library/Mockery',
         ),
-        'Mdanter\\Ecc\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/mdanter/ecc/src',
-        ),
         'League\\Uri\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/uri',
@@ -502,9 +507,9 @@ class ComposerStaticInitc4a8ebf5c246ee03add640523210339f
         array (
             0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
         ),
-        'FG\\' => 
+        'Elliptic\\' => 
         array (
-            0 => __DIR__ . '/..' . '/fgrosse/phpasn1/lib',
+            0 => __DIR__ . '/..' . '/simplito/elliptic-php/lib',
         ),
         'Egulias\\EmailValidator\\' => 
         array (
@@ -553,6 +558,14 @@ class ComposerStaticInitc4a8ebf5c246ee03add640523210339f
         'BitWasp\\Bech32\\' => 
         array (
             0 => __DIR__ . '/..' . '/bitwasp/bech32/src',
+        ),
+        'BN\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/simplito/bn-php/lib',
+        ),
+        'BI\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/simplito/bigint-wrapper-php/lib',
         ),
     );
 
@@ -1932,9 +1945,9 @@ class ComposerStaticInitc4a8ebf5c246ee03add640523210339f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc4a8ebf5c246ee03add640523210339f::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc4a8ebf5c246ee03add640523210339f::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitc4a8ebf5c246ee03add640523210339f::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit50ab414a16e5f1a02f9ec669002c3e91::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit50ab414a16e5f1a02f9ec669002c3e91::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit50ab414a16e5f1a02f9ec669002c3e91::$classMap;
 
         }, null, ClassLoader::class);
     }

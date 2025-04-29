@@ -4,7 +4,7 @@ namespace KmcpG\MultiversxSdkLaravel;
 
 use Illuminate\Support\ServiceProvider;
 use KmcpG\MultiversxSdkLaravel\Contracts\MultiversxInterface;
-use KmcpG\MultiversxSdkLaravel\Services\WalletService; // Service principal par défaut
+use KmcpG\MultiversxSdkLaravel\Services\WalletService; // Default primary service
 use KmcpG\MultiversxSdkLaravel\Services\MultiversxClient;
 use KmcpG\MultiversxSdkLaravel\Services\TransactionService;
 use KmcpG\MultiversxSdkLaravel\Services\TokenService;
@@ -13,17 +13,17 @@ class MultiversxServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        // Fusionner la configuration
+        // Merge configuration
         $this->mergeConfigFrom(
             __DIR__.'/Config/multiversx.php', 'multiversx'
         );
 
-        // Lier le client HTTP en singleton
+        // Bind HTTP client as singleton
         $this->app->singleton(MultiversxClient::class, function ($app) {
             return new MultiversxClient();
         });
 
-        // Lier les services spécifiques
+        // Bind specific services
         $this->app->singleton(WalletService::class, function ($app) {
             return new WalletService($app->make(MultiversxClient::class));
         });
@@ -36,16 +36,16 @@ class MultiversxServiceProvider extends ServiceProvider
             return new TokenService($app->make(MultiversxClient::class));
         });
 
-        // Lier l'interface principale (par défaut au WalletService, peut être adapté)
+        // Bind the main interface (defaults to WalletService, can be adapted)
         $this->app->bind(MultiversxInterface::class, WalletService::class);
 
-        // Alias pour la façade
+        // Alias for the facade
         $this->app->alias(MultiversxInterface::class, 'multiversx');
     }
 
     public function boot(): void
     {
-        // Rendre la configuration publiable
+        // Make configuration publishable
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/Config/multiversx.php' => config_path('multiversx.php'),

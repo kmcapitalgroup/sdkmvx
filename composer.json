@@ -7,15 +7,16 @@
     "authors": [
         {
             "name": "KMCPG",
-            "email": "contact@example.com"
+            "email": "kevinm@kmcapitalgroup.fr"
         }
     ],
     "require": {
         "php": "^8.1",
         "illuminate/support": "^11.0|^12.0",
         "illuminate/http": "^11.0|^12.0",
-        "mdanter/ecc": "^1.0",
-        "bitwasp/bech32": "^0.0.1"
+        "bitwasp/bech32": "^0.0.1",
+        "kornrunner/keccak": "^1.1",
+        "simplito/elliptic-php": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.0|^11.0",
@@ -47,4 +48,4 @@
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
     }
-} 
+}
