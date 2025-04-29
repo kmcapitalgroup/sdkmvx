@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - YYYY-MM-DD
+
+### Added
+
+*   Initial structure and example for Integration Tests (`tests/Integration`, `tests/IntegrationTestCase.php`). Requires environment setup (see README/tests).
+*   Added `Integration` test suite to `phpunit.xml`.
+
+### Changed
+
+*   Migrated key generation in `WalletService::createWallet` from `mdanter/ecc` to `simplito/elliptic-php`.
+*   Migrated transaction signing in `TransactionService::signTransaction` from `mdanter/ecc` to `simplito/elliptic-php`.
+*   Updated examples in `README.md`.
+
+### Removed
+
+*   Removed direct dependency on `mdanter/ecc` (abandoned library).
+
 ## [1.0.0] - 2024-11-15
 
 ### Added

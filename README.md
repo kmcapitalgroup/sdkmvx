@@ -1,7 +1,7 @@
 # MultiversX SDK for Laravel
 
 A Laravel SDK for interacting with the MultiversX blockchain (formerly Elrond).
-PS :Initially made for intern us it still in alpha use with cautions.
+PS :Initially made for intern usage it still in alpha use with cautions.
 
 ## Installation
 
@@ -248,15 +248,52 @@ $properties = $tokenService->getTokenProperties('WEGLD-bd4d79');
 
 // Get the balance of a specific token for an address
 $balanceInfo = $tokenService->getTokenBalance('erd1...', 'WEGLD-bd4d79');
-// $balance = $balanceInfo['balance'];
-
-// List all tokens held by an address (supports pagination)
-$allTokensPage1 = $tokenService->listAccountTokens('erd1...', 0, 25); // Get first 25 tokens
-$allTokensPage2 = $tokenService->listAccountTokens('erd1...', 25, 25); // Get next 25 tokens
+// $balanceAtomic = $balanceInfo['balance']; // Balance in atomic units (string)
 ```
 
 ## Testing
 
+This SDK includes both unit and integration tests using PHPUnit.
+
+**Run all tests:**
+
 ```bash
 composer test
-``` 
+```
+
+**Run only unit tests:**
+
+```bash
+vendor/bin/phpunit --testsuite=Unit
+```
+
+**Run only integration tests:**
+
+```bash
+vendor/bin/phpunit --testsuite=Integration
+```
+
+### Integration Test Requirements
+
+The integration tests (`tests/Integration`) interact with the **MultiversX Devnet**. To run them successfully, you need valid Devnet credentials set as environment variables in your `.env` file or your system environment:
+
+```dotenv
+# .env for integration tests
+MULTIVERSX_TEST_SENDER_PK="YOUR_64_CHAR_HEX_PRIVATE_KEY"
+MULTIVERSX_TEST_SENDER_ADDRESS="erd1..."
+MULTIVERSX_TEST_RECEIVER_ADDRESS="erd1..."
+```
+
+-   `MULTIVERSX_TEST_SENDER_PK`: **Required.** The 64-character hexadecimal private key of a Devnet wallet holding some test xEGLD. **This must be the raw hex key, NOT a path to a PEM file or its content.**
+-   `MULTIVERSX_TEST_SENDER_ADDRESS`: **Required.** The corresponding `erd1...` address for the sender private key.
+-   `MULTIVERSX_TEST_RECEIVER_ADDRESS`: **Required.** Another valid `erd1...` Devnet address to receive test xEGLD.
+
+If these variables are not set, the integration tests that require sending a transaction will be skipped. You can obtain Devnet credentials and test xEGLD from the [MultiversX Devnet Faucet](https://devnet-wallet.multiversx.com/faucet).
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit issues or pull requests.
+
+## License
+
+MIT 
