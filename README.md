@@ -1,6 +1,7 @@
 # MultiversX SDK for Laravel
 
 A Laravel SDK for interacting with the MultiversX blockchain (formerly Elrond).
+PS :Initially made for intern us it still in alpha use with cautions.
 
 ## Installation
 
