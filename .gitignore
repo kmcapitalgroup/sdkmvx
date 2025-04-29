@@ -11,6 +11,7 @@
 .vscode/
 *.sublime-project
 *.sublime-workspace
+.cursor/
 
 # OS generated files
 .DS_Store
@@ -47,4 +48,7 @@ yarn.lock
 workbench/
 
 # Herd specific (if any local config)
-.herd/ 
+.herd/
+
+# Project specific files
+sdkmvxlaravel12.mdc 

@@ -1,7 +1,7 @@
 {
     "name": "kmcpg/multiversx-sdk-laravel",
     "description": "Laravel SDK for interacting with the MultiversX blockchain.",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "type": "library",
     "license": "MIT",
     "authors": [
